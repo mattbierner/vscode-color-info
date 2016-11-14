@@ -1,8 +1,8 @@
 {
   "name": "color-info",
   "displayName": "Color Info",
-  "description": "provides quick information about css colors",
-  "version": "0.0.0",
+  "description": "Provides quick information about css colors",
+  "version": "0.0.1",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
@@ -10,9 +10,7 @@
     "rgb",
     "css",
     "hsl",
-    "hsb",
-    "cmyk",
-    "lab"
+    "cmyk"
   ],
   "icon": "media/logo.svg",
   "galleryBanner": {
