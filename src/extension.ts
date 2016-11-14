@@ -5,11 +5,21 @@ import * as colorHelper from './color_helper'
 
 import RgbDisplay from './displays/rgb_display'
 import HslDisplay from './displays/hsl_display'
+import HsvDisplay from './displays/hsv_display'
+import CmykDisplay from './displays/cmyk_display'
+import LabDisplay from './displays/lab_display'
+import AlphaDisplay from './displays/alpha_display'
+import HexDisplay from './displays/hex_display'
 
 
 const displays = [
     RgbDisplay,
-    HslDisplay
+    HslDisplay,
+    HsvDisplay,
+    CmykDisplay,
+    LabDisplay,
+    AlphaDisplay,
+    HexDisplay
 ];
 
 
@@ -28,10 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
             const match = colorHelper.getColorAtPosition(position, line.text)
             if (match) {
                 const display = getDisplay(displays, match);
-                return new vscode.Hover({
-                    language: 'markdown',
-                    value: display
-                });
+                return new vscode.Hover(display);
             }
             console.log('noop')
             return null;
