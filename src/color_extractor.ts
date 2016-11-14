@@ -46,12 +46,58 @@ const getHslColorsForLine = (lineNumber: number, line: string) =>
     getRegExForLine(/hsla?\(.+?\)/g, lineNumber, line)
 
 /**
+ * Get all hex colors in a line of text.
+ */
+const getHexColorsForLine = (lineNumber: number, line: string) =>
+    getRegExForLine(/#(?:[0-9a-fA-F]{3}){1,2}/g, lineNumber, line)
+
+/**
+ * 
+ */
+const getNamedColorAtPosition = (position: vscode.Position, line: string): ColorMatch[] => {
+    let right = ''
+    for (let i = position.character; i < line.length; ++i) {
+        const char = line[i]
+        if (!char.match(/\w/))
+            break
+        right += char
+    }
+
+    let left = ''
+    let leftHead = position.character - 1;
+    for (; leftHead >= 0; --leftHead) {
+        const char = line[leftHead]
+        if (!char.match(/\w/))
+            break
+        left = char + left
+    }
+    leftHead = Math.max(leftHead, 0)
+
+    const word = left + right;
+    const color = tinycolor(word)
+    if (color && color.isValid()) {
+        const span = new vscode.Range(
+            new vscode.Position(position.line, leftHead),
+            new vscode.Position(position.line, leftHead + word.length))
+
+        return [{
+            value: word,
+            color: color,
+            span: span
+        }]
+    }
+    return []
+}
+
+/**
  * Get all color values in a line of text.
  */
 const getColorsForLine = (position: vscode.Position, line: string): ColorMatch[] =>
     [].concat(
         getRgbColorForLine(position.line, line),
-        getHslColorsForLine(position.line, line)
+        getHslColorsForLine(position.line, line),
+        getHexColorsForLine(position.line, line),
+        getNamedColorAtPosition(position, line)
     )
 
 /**

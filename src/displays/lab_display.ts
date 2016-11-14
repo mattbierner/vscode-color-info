@@ -1,11 +1,11 @@
 const convert = require('color-convert');
 
 import {ColorInfoDisplay} from '../color_info_display'
-import {ColorMatch} from '../color_helper'
+import {ColorMatch} from '../color_extractor'
 import {number, func} from './display_helper'
 
 /**
- * Color display provider for Lab color
+ * Displays the LAB value of a color.
  */
 export default new class LabDisplay implements ColorInfoDisplay {
     name = 'lab';

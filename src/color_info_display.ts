@@ -1,4 +1,4 @@
-import {ColorMatch} from './color_helper'
+import {ColorMatch} from './color_extractor'
 
 /**
  * 

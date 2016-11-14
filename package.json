@@ -22,13 +22,33 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattbierner/vscode-speech.git"
+    "url": "https://github.com/mattbierner/vscode-color-info.git"
   },
   "activationEvents": [
-    "onLanguage:css"
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:sass",
+    "onLanguage:scss"
   ],
   "main": "./out/src/extension",
-  "contributes": {},
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Color-Info configuration",
+      "properties": {
+        "colorInfo.fields": {
+          "type": "array",
+          "default": null,
+          "description": "Ordered list of color fields to display."
+        },
+        "colorInfo.excludedFields": {
+          "type": "array",
+          "default": null,
+          "description": "Color fields not to display. Overrides `colorInfo.fields`."
+        }
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
