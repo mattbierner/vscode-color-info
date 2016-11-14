@@ -1,0 +1,45 @@
+{
+  "name": "color-info",
+  "displayName": "Color Info",
+  "description": "Text to speech",
+  "version": "0.0.0",
+  "publisher": "bierner",
+  "license": "MIT",
+  "keywords": [
+    "color",
+    "rgb"
+  ],
+  "icon": "media/logo.svg",
+  "galleryBanner": {
+    "color": "#fefefe",
+    "theme": "light"
+  },
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattbierner/vscode-speech.git"
+  },
+  "activationEvents": [
+    "onLanguage:css"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {},
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.5",
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "color-convert": "^1.7.0",
+    "tinycolor2": "^1.4.1"
+  }
+}

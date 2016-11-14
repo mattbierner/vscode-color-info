@@ -1,0 +1,11 @@
+# OS Files #
+############
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+out
+node_modules
+example
+*.vsix
