@@ -1,13 +1,18 @@
 {
   "name": "color-info",
   "displayName": "Color Info",
-  "description": "Text to speech",
+  "description": "",
   "version": "0.0.0",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
     "color",
-    "rgb"
+    "rgb",
+    "css",
+    "hsl",
+    "hsb",
+    "cmyk",
+    "lab"
   ],
   "icon": "media/logo.svg",
   "galleryBanner": {
