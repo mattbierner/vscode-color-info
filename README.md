@@ -18,7 +18,7 @@
 
 You can customize which of these fields are displayed and the order they are displayed in using the settings described below.
 
-The extension works with any css, sass, or less document and regognizes all basic css color formats, including named colors.
+The extension works with any css, sass, or less document and recognizes all basic css color formats, including named colors.
 
 
 ## Configuration
@@ -30,8 +30,6 @@ Ordered array of color fields to display.
 
 
 #### `colorInfo.excludedFields`
-Array of fields not to display. Overrides `colorInfo.fields`. If you only need to exclude one or two of the default fields, using `colorInfo.excludedFields` is the prefered approach.
+Array of fields not to display. Overrides `colorInfo.fields`. If you only need to exclude one or two of the default fields, using `colorInfo.excludedFields` is the preferred approach.
 
 ![excluded fields](media/excluded.png)
-
-
