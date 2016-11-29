@@ -2,7 +2,7 @@
   "name": "color-info",
   "displayName": "Color Info",
   "description": "Provides quick information about css colors",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
@@ -42,11 +42,45 @@
         "colorInfo.fields": {
           "type": "array",
           "default": null,
+          "items": {
+            "type": "string",
+            "enum": [
+              "alpha",
+              "cmyk",
+              "hex",
+              "hsl",
+              "hsv",
+              "lab",
+              "preview-square-xl",
+              "preview-square",
+              "preview-xl",
+              "preview",
+              "rgb"
+            ],
+            "description": "Color field id"
+          },
           "description": "Ordered list of color fields to display."
         },
         "colorInfo.excludedFields": {
           "type": "array",
           "default": null,
+          "items": {
+            "type": "string",
+            "enum": [
+              "alpha",
+              "cmyk",
+              "hex",
+              "hsl",
+              "hsv",
+              "lab",
+              "preview-square-xl",
+              "preview-square",
+              "preview-xl",
+              "preview",
+              "rgb"
+            ],
+            "description": "Color field id"
+          },
           "description": "Color fields not to display. Overrides `colorInfo.fields`."
         }
       }

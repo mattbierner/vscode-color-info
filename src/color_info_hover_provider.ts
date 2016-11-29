@@ -10,10 +10,10 @@ import CmykDisplay from './displays/cmyk_display'
 import LabDisplay from './displays/lab_display'
 import AlphaDisplay from './displays/alpha_display'
 import HexDisplay from './displays/hex_display'
-import {Preview, PreviewSquare, PreviewSquareXL} from './displays/preview_display'
+import {Preview, PreviewXL, PreviewSquare, PreviewSquareXL} from './displays/preview_display'
 
 const allFields = [
-    Preview, PreviewSquare, PreviewSquareXL,
+    Preview, PreviewXL, PreviewSquare, PreviewSquareXL,
     RgbDisplay,
     HslDisplay,
     HsvDisplay,

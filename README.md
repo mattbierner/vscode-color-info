@@ -15,6 +15,10 @@
 * `cmyk` – CMYK color values. Enabled by default
 * `hex` – Hex value. Enabled by default
 * `alpha` – Alpha value. Enabled by default
+* `preview` – Preview of the color. Displays color with alpha in lower left coner and color without alpha in upper right corner. Enabled by default
+* `preview-xl` – Larger preview of the color
+* `preview-square-xl` – Square preview of the color
+* `preview-square-xl` – Larger square preview of the color
 
 You can customize which of these fields are displayed and the order they are displayed in using the settings described below.
 
