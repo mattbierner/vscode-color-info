@@ -2,7 +2,7 @@ import {ColorInfoDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 const Datauri = require('datauri');
 /**
- * Displays a preview of a color color.
+ * Displays a preview of a color.
  */
 class PreviewDisplay implements ColorInfoDisplay {
     name: string
