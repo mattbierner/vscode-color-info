@@ -10,8 +10,10 @@ import CmykDisplay from './displays/cmyk_display'
 import LabDisplay from './displays/lab_display'
 import AlphaDisplay from './displays/alpha_display'
 import HexDisplay from './displays/hex_display'
+import {Preview, PreviewSquare, PreviewSquareXL} from './displays/preview_display'
 
 const allFields = [
+    Preview, PreviewSquare, PreviewSquareXL,
     RgbDisplay,
     HslDisplay,
     HsvDisplay,
@@ -25,6 +27,7 @@ const allFields = [
 }, {});
 
 const defaultFields = [
+    Preview.name,
     RgbDisplay.name,
     HslDisplay.name,
     CmykDisplay.name,
@@ -51,7 +54,7 @@ const getDisplays = (): ColorInfoDisplay[] => {
         .map(x => allFields[x])
         .filter(x => x)
 }
- 
+
 const getDisplay = (match): string =>
     getDisplays().map(x => x.display(match))
         .filter(x => x && x.length > 0)
