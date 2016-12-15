@@ -31,8 +31,7 @@
     "*",
     "onLanguage:css",
     "onLanguage:less",
-    "onLanguage:sass",
-    "onLanguage:scss"
+    "onLanguage:sass"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -89,10 +88,6 @@
           "default": [
             {
               "selector": "css",
-              "colors": "css"
-            },
-            {
-              "selector": "scss",
               "colors": "css"
             },
             {

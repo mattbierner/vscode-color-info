@@ -49,7 +49,7 @@ const getRegExForLine = (re: RegExp, line: string, lineNumber: number): ColorMat
 const rgbExtractor: ColorValueExtractor = {
     type: 'rgb',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/rgba?\(.+?\)/g, line, position.line)
+        return getRegExForLine(/(\b|^)rgba?\(.+?\)/g, line, position.line)
     }
 }
 
@@ -59,7 +59,7 @@ const rgbExtractor: ColorValueExtractor = {
 const hslExtractor: ColorValueExtractor = {
     type: 'hsl',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/hsla?\(.+?\)/g, line, position.line)
+        return getRegExForLine(/(\b|^)hsla?\(.+?\)/g, line, position.line)
     }
 }
 
@@ -69,7 +69,7 @@ const hslExtractor: ColorValueExtractor = {
 const hexExtractor: ColorValueExtractor = {
     type: 'hex',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/#(?:[0-9a-fA-F]{3}){1,2}/g, line, position.line)
+        return getRegExForLine(/(\b|^|\s)#(?:[0-9a-fA-F]{3}){1,2}(\b|$)/g, line, position.line)
     }
 }
 
