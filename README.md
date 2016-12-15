@@ -60,7 +60,7 @@ Defines which files and languages have color info enabled, and which color types
 Each element consists of:
 
 * `"selector"` - [VSCode document selector](https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector).
-* `"colors"` - Defines the types of colors to display information for. Valid values are:
+* `"colors"` - String or array of strings defining the types of colors to display information for. Valid values color types are:
 
     * `css` - All css color value types
     * `hex` - Css hex (`#ff0ff`) color value
