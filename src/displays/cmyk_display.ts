@@ -1,13 +1,13 @@
 const convert = require('color-convert');
 
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 import {deg, percent, func} from './display_helper'
 
 /**
  * Displays the CMYK value of a color.
  */
-export default new class CmykDisplay implements ColorInfoDisplay {
+export default new class CmykDisplay implements ColorValueDisplay {
     name = 'cmyk';
 
     display(match: ColorMatch) {

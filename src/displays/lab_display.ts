@@ -1,13 +1,13 @@
 const convert = require('color-convert');
 
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 import {number, func} from './display_helper'
 
 /**
  * Displays the LAB value of a color.
  */
-export default new class LabDisplay implements ColorInfoDisplay {
+export default new class LabDisplay implements ColorValueDisplay {
     name = 'lab';
 
     display(match: ColorMatch) {

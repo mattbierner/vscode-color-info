@@ -1,10 +1,10 @@
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 const Datauri = require('datauri');
 /**
  * Displays a preview of a color.
  */
-class PreviewDisplay implements ColorInfoDisplay {
+class PreviewDisplay implements ColorValueDisplay {
     name: string
     _width: number
     _height: number

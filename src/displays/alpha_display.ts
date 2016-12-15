@@ -1,11 +1,11 @@
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 import {decimalPercent, func} from './display_helper'
 
 /**
  * Displays the alpha value
  */
-export default new class AlphaDisplay implements ColorInfoDisplay {
+export default new class AlphaDisplay implements ColorValueDisplay {
     name = 'alpha';
 
     display(match: ColorMatch) {

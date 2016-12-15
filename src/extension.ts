@@ -1,17 +1,40 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import colorInfoHoverProvider from './color_info_hover_provider'
 
-/**
- * Languages that support the color info hover provider
- */
-const supportedLanguages = ['css', 'scss', 'sass', 'less']
+import ColorInfoHoverProvider from './hover_provider'
+import { ColorExtractor } from './color_extractor'
+import { ColorDisplay } from './color_info_display'
+import { LanguagesConfiguration } from './configuration'
 
 /**
  * Main extension activation.
  */
 export function activate(context: vscode.ExtensionContext) {
-    supportedLanguages.forEach(lang =>
-        context.subscriptions.push(vscode.languages.registerHoverProvider(lang, colorInfoHoverProvider)))
+    function reload() {
+        for (const existing of providerRegistrations) {
+            existing.dispose()
+        }
+        while (context.subscriptions.length) {
+            context.subscriptions[context.subscriptions.length - 1] = undefined
+            --context.subscriptions.length
+        }
+        providerRegistrations = []
+        const workspaceConfig = vscode.workspace.getConfiguration('colorInfo')
+        const display = new ColorDisplay(workspaceConfig)
+
+        const languageConfig = LanguagesConfiguration.load(workspaceConfig)
+        for (const lang of languageConfig.languages) {
+            const hoverProvider = new ColorInfoHoverProvider(new ColorExtractor(lang.colorExtractors), display)
+            const registration = vscode.languages.registerHoverProvider(lang.selector, hoverProvider)
+            providerRegistrations.push(registration)
+            context.subscriptions.push(registration)
+        }
+    }
+
+    let providerRegistrations: vscode.Disposable[] = []
+
+    vscode.workspace.onDidChangeConfiguration(() => {
+        reload()
+    })
+
+    reload()
 }

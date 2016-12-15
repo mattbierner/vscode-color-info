@@ -10,13 +10,13 @@ export const clamp = (val: number, min: number, max: number): number =>
 /**
  * 
  */
-export const pad = (val: number, count: number): string =>
+export const pad = (val: string, count: number): string =>
     padImpl(count, '' + val, '\u00A0')
 
 /**
  * 
  */
-export const number = (val, padding: number)  => 
+export const number = (val: string, padding: number)  => 
     '`\u200B' + pad(val, padding + 2) + '`' 
 
 /**

@@ -2,7 +2,7 @@
   "name": "color-info",
   "displayName": "Color Info",
   "description": "Provides quick information about css colors",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
@@ -89,32 +89,47 @@
           "default": [
             {
               "selector": "css",
-              "colors": ["css"]
+              "colors": "css"
             },
             {
               "selector": "scss",
-              "colors": ["css"]
+              "colors": "css"
             },
             {
               "selector": "sass",
-              "colors": ["css"]
+              "colors": "css"
             },
             {
               "selector": "less",
-              "colors": ["css"]
+              "colors": "css"
             }
           ],
           "items": {
             "type": "object",
             "properties": {
               "selector": {
-                "type": ["string", "object"],
+                "type": [
+                  "string",
+                  "object"
+                ],
                 "description": "Document selector for language or file. See https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector"
               },
               "colors": {
-                "type": ["array"],
+                "type": [
+                  "array",
+                  "string"
+                ],
                 "default": "css",
-                "description": "Types of colors to detect"
+                "description": "Types of colors to detect",
+                "items": {
+                  "enum": [
+                    "css",
+                    "hex",
+                    "rgb",
+                    "hsl",
+                    "css-color-names"
+                  ]
+                }
               }
             }
           }
@@ -123,13 +138,14 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
+    "@types/node": "^6.0.52",
     "typescript": "^2.1.4",
-    "vscode": "^0.11.0"
+    "vscode": "^1.0.3"
   },
   "dependencies": {
     "color-convert": "^1.7.0",

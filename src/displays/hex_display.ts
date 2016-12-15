@@ -1,11 +1,11 @@
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 import {number} from './display_helper'
 
 /**
  * Displays the hex value of the color.
  */
-export default new class HexDisplay implements ColorInfoDisplay {
+export default new class HexDisplay implements ColorValueDisplay {
     name = 'hex';
 
     display(match: ColorMatch) {

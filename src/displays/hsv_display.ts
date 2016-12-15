@@ -1,11 +1,11 @@
-import {ColorInfoDisplay} from '../color_info_display'
+import {ColorValueDisplay} from '../color_info_display'
 import {ColorMatch} from '../color_extractor'
 import {deg, decimalPercent, func} from './display_helper'
 
 /**
  * Displays the HSV value of a color.
  */
-export default new class HsvDisplay implements ColorInfoDisplay {
+export default new class HsvDisplay implements ColorValueDisplay {
     name = 'hsv';
 
     display(match: ColorMatch) {
