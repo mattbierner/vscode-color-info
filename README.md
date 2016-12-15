@@ -15,7 +15,7 @@
 * `cmyk` – CMYK color values. Enabled by default
 * `hex` – Hex value. Enabled by default
 * `alpha` – Alpha value. Enabled by default
-* `preview` – Preview of the color. Displays color with alpha in lower left coner and color without alpha in upper right corner. Enabled by default
+* `preview` – Preview of the color. Displays color with alpha in lower left corner and color without alpha in upper right corner. Enabled by default
 * `preview-xl` – Larger preview of the color
 * `preview-square-xl` – Square preview of the color
 * `preview-square-xl` – Larger square preview of the color
@@ -40,18 +40,7 @@ Array of fields not to display. Overrides `colorInfo.fields`. If you only need t
 
 
 #### `colorInfo.languages`
-An array that defines files and languages that have color info enabled, and which color types are supported for each one. Each element of the languages array is:
-
-* `"selector"` - [VSCode document selector](https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector).
-* `"colors"` - Defines the types of colors to display information for. Valid values are:
-
-    * `css` - All css color value types
-    * `hex` - Css hex (`#ff0ff`) color value
-    * `rgb` - Css rgb (`rgb(1, 2, 3)`) color values
-    * `hsl` - Css hsl (`hsl(1, 2, 3)`) color values
-    * `css-colors-names` - Css color names (`red`, `blue`)
-
-The default language setting enables all css color values for `css`, `sass`, and `less` documents:
+Defines which files and languages have color info enabled, and which color types are supported. The default language setting enables all css color values for `css`, `sass`, and `less` documents:
 
 ```json
 "colorInfo.languages": [
@@ -68,7 +57,18 @@ The default language setting enables all css color values for `css`, `sass`, and
 ]
 ```
 
-VSCode does not currently support nested languages, so to enable Color Info in an html file, you must add: 
+Each element consists of:
+
+* `"selector"` - [VSCode document selector](https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector).
+* `"colors"` - Defines the types of colors to display information for. Valid values are:
+
+    * `css` - All css color value types
+    * `hex` - Css hex (`#ff0ff`) color value
+    * `rgb` - Css rgb (`rgb(1, 2, 3)`) color values
+    * `hsl` - Css hsl (`hsl(1, 2, 3)`) color values
+    * `css-colors-names` - Css color names (`red`, `blue`)
+
+VSCode does not currently support nested languages, so to enable Color Info in an `html` file, you must add: 
 
 ```json
 {
@@ -77,4 +77,4 @@ VSCode does not currently support nested languages, so to enable Color Info in a
 }
 ```
 
-To your `colorInfo.languages` setting.
+To your `colorInfo.languages` setting. Make you add this setting to the end of the default `colorInfo.languages` setting so that you do not disable Color Info for the standard languages.
