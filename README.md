@@ -63,7 +63,7 @@ Each element consists of:
 * `"colors"` - String or array of strings defining the types of colors to display information for. Valid values color types are:
 
     * `css` - All css color value types
-    * `hex` - Css hex (`#ff0ff`) color value
+    * `hex` - Css hex (`#ff00ff`) color value
     * `rgb` - Css rgb (`rgb(1, 2, 3)`) color values
     * `hsl` - Css hsl (`hsl(1, 2, 3)`) color values
     * `css-colors-names` - Css color names (`red`, `blue`)
