@@ -28,6 +28,7 @@
     "url": "https://github.com/mattbierner/vscode-color-info.git"
   },
   "activationEvents": [
+    "*",
     "onLanguage:css",
     "onLanguage:less",
     "onLanguage:sass",
@@ -82,6 +83,41 @@
             "description": "Color field id"
           },
           "description": "Color fields not to display. Overrides `colorInfo.fields`."
+        },
+        "colorInfo.languages": {
+          "type": "array",
+          "default": [
+            {
+              "selector": "css",
+              "colors": ["css"]
+            },
+            {
+              "selector": "scss",
+              "colors": ["css"]
+            },
+            {
+              "selector": "sass",
+              "colors": ["css"]
+            },
+            {
+              "selector": "less",
+              "colors": ["css"]
+            }
+          ],
+          "items": {
+            "type": "object",
+            "properties": {
+              "selector": {
+                "type": ["string", "object"],
+                "description": "Document selector for language or file. See https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector"
+              },
+              "colors": {
+                "type": ["array"],
+                "default": "css",
+                "description": "Types of colors to detect"
+              }
+            }
+          }
         }
       }
     }
@@ -92,7 +128,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "typescript": "^1.8.5",
+    "typescript": "^2.1.4",
     "vscode": "^0.11.0"
   },
   "dependencies": {
