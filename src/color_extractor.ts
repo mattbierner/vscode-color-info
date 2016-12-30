@@ -69,7 +69,7 @@ const hslExtractor: ColorValueExtractor = {
 const hexExtractor: ColorValueExtractor = {
     type: 'hex',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/(\b|^|\s)#(?:[0-9a-fA-F]{3}){1,2}(\b|$)/g, line, position.line)
+        return getRegExForLine(/(\b|^|\s)\#(?:[0-9a-fA-F]{3}){1,2}(\b|$)/g, line, position.line)
     }
 }
 
@@ -79,10 +79,11 @@ const hexExtractor: ColorValueExtractor = {
 const cssNameExtractor: ColorValueExtractor = {
     type: 'css-color-names',
     getColors(line: string, position: vscode.Position) {
+        const colorNameCharacter = /[a-z]/i;
         let right = ''
         for (let i = position.character; i < line.length; ++i) {
             const char = line[i]
-            if (!char.match(/\w/))
+            if (!char.match(colorNameCharacter))
                 break
             right += char
         }
@@ -91,7 +92,7 @@ const cssNameExtractor: ColorValueExtractor = {
         let leftHead = position.character - 1;
         for (; leftHead >= 0; --leftHead) {
             const char = line[leftHead]
-            if (!char.match(/\w/))
+            if (!char.match(colorNameCharacter))
                 break
             left = char + left
         }

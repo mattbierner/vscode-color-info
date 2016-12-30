@@ -2,7 +2,7 @@
   "name": "color-info",
   "displayName": "Color Info",
   "description": "Provides quick information about css colors",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
