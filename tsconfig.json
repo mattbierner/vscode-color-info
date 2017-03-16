@@ -8,7 +8,10 @@
         ],
         "sourceMap": true,
         "rootDir": ".",
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "strictNullChecks": true
     },
     "exclude": [
         "node_modules",

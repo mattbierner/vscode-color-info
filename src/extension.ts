@@ -14,8 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
             existing.dispose()
         }
         while (context.subscriptions.length) {
-            context.subscriptions[context.subscriptions.length - 1] = undefined
-            --context.subscriptions.length
+            context.subscriptions.pop()
         }
         providerRegistrations = []
         const workspaceConfig = vscode.workspace.getConfiguration('colorInfo')

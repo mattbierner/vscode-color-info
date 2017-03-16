@@ -9,11 +9,12 @@ import CmykDisplay from './displays/cmyk_display'
 import LabDisplay from './displays/lab_display'
 import AlphaDisplay from './displays/alpha_display'
 import HexDisplay from './displays/hex_display'
+import NameDisplay from './displays/name_display'
 import { Preview, PreviewXL, PreviewSquare, PreviewSquareXL } from './displays/preview_display'
 
 export interface ColorValueDisplay {
     name: string,
-    display(colorMatch: ColorMatch): string
+    display(colorMatch: ColorMatch): string | null
 }
 
 type DisplayRegistry = Map<string, ColorValueDisplay>
@@ -26,7 +27,8 @@ const allFields = [
     CmykDisplay,
     LabDisplay,
     AlphaDisplay,
-    HexDisplay
+    HexDisplay,
+    NameDisplay
 ].reduce((p: DisplayRegistry, display) => {
     p.set(display.name, display)
     return p

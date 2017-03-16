@@ -2,7 +2,7 @@
   "name": "color-info",
   "displayName": "Color Info",
   "description": "Provides quick information about css colors",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
@@ -18,7 +18,7 @@
     "theme": "light"
   },
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.8.0"
   },
   "categories": [
     "Other"
@@ -40,13 +40,17 @@
       "title": "Color-Info configuration",
       "properties": {
         "colorInfo.fields": {
-          "type": "array",
+          "type": [
+            "array",
+            "null"
+          ],
           "default": null,
           "items": {
             "type": "string",
             "enum": [
               "alpha",
               "cmyk",
+              "css-color-name",
               "hex",
               "hsl",
               "hsv",
@@ -69,6 +73,7 @@
             "enum": [
               "alpha",
               "cmyk",
+              "css-color-name",
               "hex",
               "hsl",
               "hsv",

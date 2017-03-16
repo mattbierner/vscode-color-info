@@ -10,6 +10,7 @@
 
 * `rgb` – RGB color values. Enabled by default
 * `hsl` – HSL color values. Enabled by default
+* `css-color-name` - Name of the color (`red`, `blue`, ...).
 * `hsv` – HSV color values
 * `lab` – LAB color values
 * `cmyk` – CMYK color values. Enabled by default
