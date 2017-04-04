@@ -3,7 +3,7 @@ const padImpl = require('pad')
 /**
  * 
  */
-expor t const clamp = (val: number, min: number, max: number): number =>
+export const clamp = (val: number, min: number, max: number): number =>
     Math.min(max, Math.max(min, val))
 
 /**
