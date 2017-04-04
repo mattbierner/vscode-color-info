@@ -1,10 +1,9 @@
 const padImpl = require('pad')
 
-
 /**
  * 
  */
-export const clamp = (val: number, min: number, max: number): number =>
+expor t const clamp = (val: number, min: number, max: number): number =>
     Math.min(max, Math.max(min, val))
 
 /**
@@ -16,8 +15,8 @@ export const pad = (val: string, count: number): string =>
 /**
  * 
  */
-export const number = (val: string, padding: number)  => 
-    '`\u200B' + pad(val, padding + 2) + '`' 
+export const number = (val: string, padding: number) =>
+    '`\u200B' + pad(val, padding + 2) + '`'
 
 /**
  * 
@@ -46,5 +45,5 @@ export const deg = (val: number, padding: number): string =>
 /**
  * 
  */
-export const func = (name: string, ...keys: Array<string>): string => 
+export const func = (name: string, ...keys: Array<string>): string =>
     `**${name}(**${keys.join(', ')}**)**`
