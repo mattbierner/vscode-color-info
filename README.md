@@ -23,7 +23,7 @@
 
 You can customize which of these fields are displayed and the order they are displayed in using the settings described below.
 
-By default, the extension works with any css, sass, or less document and recognizes all basic css color formats, including named colors. You can also enable Color Info in additional file types using the `colorInfo.languages` setting
+By default, the extension works with any css, sass, scss, or less document and recognizes all basic css color formats, including named colors. You can also enable Color Info in additional file types using the `colorInfo.languages` setting
 
 
 ## Configuration
@@ -50,6 +50,9 @@ Defines which files and languages have color info enabled, and which color types
         "colors": "css"
     }, {
         "selector": "sass",
+        "colors": "css"
+    }, {
+        "selector": "scss",
         "colors": "css"
     }, {
         "selector": "less",
