@@ -1,3 +1,6 @@
+## 0.4.0 - April 3, 2017
+* Provide color info in scss by default. Thanks @smlombardi!
+
 ## 0.3.0 - March 16, 2017
 * Added `css-color-name` display field to show color name.
 
