@@ -1,3 +1,6 @@
+## 0.4.1 - April 17, 2017
+* Fix hex not detecting in strings such as `"#f0f"` 
+
 ## 0.4.0 - April 3, 2017
 * Provide color info in scss by default. Thanks @smlombardi!
 

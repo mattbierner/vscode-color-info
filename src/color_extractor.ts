@@ -27,7 +27,7 @@ const getRegExForLine = (re: RegExp, line: string, lineNumber: number): ColorMat
     const matches: ColorMatch[] = []
     let match: RegExpExecArray | null;
     while ((match = re.exec(line))) {
-        const color = tinycolor(match[0])
+        const color = tinycolor(match[1])
         if (color && color.isValid()) {
             const span = new vscode.Range(
                 new vscode.Position(lineNumber, match.index),
@@ -49,7 +49,7 @@ const getRegExForLine = (re: RegExp, line: string, lineNumber: number): ColorMat
 const rgbExtractor: ColorValueExtractor = {
     type: 'rgb',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/(\b|^)rgba?\(.+?\)/g, line, position.line)
+        return getRegExForLine(/(?:\b|^)(rgba?\(.+?\))/g, line, position.line)
     }
 }
 
@@ -59,7 +59,7 @@ const rgbExtractor: ColorValueExtractor = {
 const hslExtractor: ColorValueExtractor = {
     type: 'hsl',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/(\b|^)hsla?\(.+?\)/g, line, position.line)
+        return getRegExForLine(/(?:\b|^)(hsla?\(.+?\))/g, line, position.line)
     }
 }
 
@@ -69,7 +69,7 @@ const hslExtractor: ColorValueExtractor = {
 const hexExtractor: ColorValueExtractor = {
     type: 'hex',
     getColors(line: string, position: vscode.Position) {
-        return getRegExForLine(/(\b|^|\s)\#(?:[0-9a-fA-F]{3}){1,2}(\b|$)/g, line, position.line)
+        return getRegExForLine(/(?:^|\s|\W)(#(?:[0-9a-fA-F]{3}){1,2})(\b|$)/g, line, position.line)
     }
 }
 
@@ -96,6 +96,12 @@ const cssNameExtractor: ColorValueExtractor = {
                 break
             left = char + left
         }
+
+        // Make sure not to grab potential hex strings
+        if (leftHead > 0 && line[leftHead] === '#') {
+            return [];
+        }
+
         leftHead = Math.max(leftHead, 0)
 
         const word = left + right;
