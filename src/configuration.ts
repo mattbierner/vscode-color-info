@@ -14,18 +14,20 @@ class LanguageConfiguration {
         const userColors = Array.isArray(user.colors) ? user.colors : [user.colors]
         for (const t of userColors.map(x => ('' + x).toLowerCase())) {
             switch (t) {
-            case 'css':
-                types.add('rgb')
-                types.add('hsl')
-                types.add('hex')
-                types.add('css-color-names')
-                break;
-            case 'rgb':
-            case 'hsl':
-            case 'hex':
-            case 'css-color-names':
-                types.add(t)
-                break;
+                case 'css':
+                    types.add('rgb')
+                    types.add('hsl')
+                    types.add('hex')
+                    types.add('hex+alpha')
+                    types.add('css-color-names')
+                    break;
+                case 'rgb':
+                case 'hsl':
+                case 'hex':
+                case 'hex+alpha':
+                case 'css-color-names':
+                    types.add(t)
+                    break;
             }
         }
         return new LanguageConfiguration(user.selector, types)

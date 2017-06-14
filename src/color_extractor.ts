@@ -10,7 +10,7 @@ export interface ColorMatch {
     span: vscode.Range
 }
 
-export type ColorValueExtractorType = 'hex' | 'rgb' | 'hsl' | 'css-color-names'
+export type ColorValueExtractorType = 'hex' | 'hex+alpha' | 'rgb' | 'hsl' | 'css-color-names'
 
 /**
  * Extracts colors from lines of text.
@@ -74,6 +74,16 @@ const hexExtractor: ColorValueExtractor = {
 }
 
 /**
+ * Get all hex colors with alpha in a line of text.
+ */
+const hexaExtractor: ColorValueExtractor = {
+    type: 'hex+alpha',
+    getColors(line: string, position: vscode.Position) {
+        return getRegExForLine(/(?:^|\s|\W)(#(?:[0-9a-fA-F]{4}){1,2})(\b|$)/g, line, position.line)
+    }
+}
+
+/**
  * Extracts named css colors
  */
 const cssNameExtractor: ColorValueExtractor = {
@@ -129,6 +139,7 @@ const valueExtractorRegistry = [
     rgbExtractor,
     hslExtractor,
     hexExtractor,
+    hexaExtractor,
     cssNameExtractor
 ].reduce((registry, extractor) => {
     registry[extractor.type] = extractor
@@ -151,7 +162,7 @@ export class ColorExtractor {
         }
     }
 
-    public getColorAtPosition(line: string, position: vscode.Position): ColorMatch | null {
+    public getColorAtPosition(line: string, position: vscode.Position): ColorMatch | undefined {
         const allColors = this.getColorsForLine(position, line)
             .filter(x => x.span.contains(position))
         return allColors[0]
