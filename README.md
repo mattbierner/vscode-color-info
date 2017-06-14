@@ -67,9 +67,10 @@ Each element consists of:
 * `"colors"` - String or array of strings defining the types of colors to display information for. Valid values color types are:
 
     * `css` - All css color value types
-    * `hex` - Css hex (`#ff00ff`) color value
-    * `rgb` - Css rgb (`rgb(1, 2, 3)`) color values
-    * `hsl` - Css hsl (`hsl(1, 2, 3)`) color values
+    * `hex` - Css hex (`#ff00ff` or `#f0f`)
+    * `hex+alpha` - Css hex plus alpha (`#ff00ff77` or `#f0f7`)
+    * `rgb` - Css rgb or rgba (`rgb(1, 2, 3)` or `rgba(1, 2, 3, 0.5)`) c
+    * `hsl` - Css hsl or hsla (`hsl(1, 2, 3)` or  `hsla(1, 2, 3, 0.5)`)
     * `css-colors-names` - Css color names (`red`, `blue`)
 
 VSCode does not currently support nested languages, so to enable Color Info in an `html` file, you must add: 

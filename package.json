@@ -2,7 +2,7 @@
   "name": "color-info",
   "displayName": "Color Info",
   "description": "Provides quick information about css colors",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "publisher": "bierner",
   "license": "MIT",
   "keywords": [
@@ -129,6 +129,7 @@
                   "enum": [
                     "css",
                     "hex",
+                    "hex+alpha",
                     "rgb",
                     "hsl",
                     "css-color-names"

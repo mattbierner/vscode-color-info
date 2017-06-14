@@ -1,3 +1,6 @@
+## 0.5.0 - June 13, 2017
+* Add support for hex colors with alpha: `#f0f7` and `#ff00ff77`
+
 ## 0.4.1 - April 17, 2017
 * Fix hex not detecting in strings such as `"#f0f"` 
 
