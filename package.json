@@ -13,7 +13,7 @@
     "hsl",
     "cmyk"
   ],
-  "icon": "media/logo.svg",
+  "icon": "media/logo.png",
   "galleryBanner": {
     "color": "#fefefe",
     "theme": "light"
