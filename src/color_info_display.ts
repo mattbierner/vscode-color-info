@@ -71,7 +71,7 @@ export class ColorDisplay {
 
         return fields
             .map(x => allFields.get(x))
-            .filter(x => x)
+            .filter(x => x) as ColorValueDisplay[];
     }
 
     private getDisplay(match: ColorMatch): string {

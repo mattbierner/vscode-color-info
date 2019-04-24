@@ -15,7 +15,7 @@ export default class ColorInfoHoverProvider implements vscode.HoverProvider {
         this._display = display
     }
 
-    provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.Hover | null {
+    provideHover(document: vscode.TextDocument, position: vscode.Position, _token: vscode.CancellationToken): vscode.Hover | null {
         const line = document.lineAt(position.line)
         const match = this._extractor.getColorAtPosition(line.text, position)
         if (match) {

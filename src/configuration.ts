@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 
-import { ColorExtractor, ColorValueExtractorType } from './color_extractor'
-import { ColorDisplay } from './color_info_display'
+import { ColorValueExtractorType } from './color_extractor'
 
 interface UserLanguageConfiguration {
     selector: string | Object
