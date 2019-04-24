@@ -1,3 +1,8 @@
+# Change Log
+
+## 0.5.1 - April 24, 2019
+* Mark explicit extension kind for VS Code compatability.
+
 ## 0.5.0 - June 13, 2017
 * Add support for hex colors with alpha: `#f0f7` and `#ff00ff77`
 
