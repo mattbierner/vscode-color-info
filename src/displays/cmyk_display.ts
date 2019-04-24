@@ -1,4 +1,4 @@
-const convert = require('color-convert');
+import * as convert from 'color-convert';
 
 import { ColorMatch } from '../color_extractor';
 import { ColorValueDisplay } from '../color_info_display';
@@ -12,7 +12,7 @@ export default new class CmykDisplay implements ColorValueDisplay {
 
     public display(match: ColorMatch) {
         const { h, s, l } = match.color.toHsl();
-        const [c, m, y, k] = convert.hsl.cmyk(h, s * 100, l * 100);
+        const [c, m, y, k] = convert.hsl.cmyk([h, s * 100, l * 100]);
         return func('cmyk', percent(c, 5), percent(m, 5), percent(y, 5), percent(k, 5));
     }
 }();

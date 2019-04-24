@@ -1,4 +1,4 @@
-const padImpl = require('pad');
+import * as padImpl from 'pad';
 
 export const clamp = (val: number, min: number, max: number): number =>
     Math.min(max, Math.max(min, val));

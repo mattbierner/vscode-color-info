@@ -150,15 +150,16 @@
     "lint": "tslint -p ./"
   },
   "devDependencies": {
+    "@types/color-convert": "^1.9.0",
     "@types/node": "^6.0.52",
-    "typescript": "^2.1.4",
     "@types/vscode": "^1.33.0",
-    "tslint": "5.16.0"
+    "tslint": "5.16.0",
+    "typescript": "^3.4.0"
   },
   "dependencies": {
-    "color-convert": "^1.7.0",
-    "datauri": "^1.0.4",
-    "pad": "^1.0.2",
+    "color-convert": "^2.0.0",
+    "datauri": "^2.0.0",
+    "pad": "^2.3.0",
     "tinycolor2": "^1.4.1"
   }
 }
