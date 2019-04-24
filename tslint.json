@@ -1,0 +1,16 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "quotemark": false,
+    "interface-name": false,
+    "no-conditional-assignment": false,
+    "object-literal-sort-keys": false,
+    "variable-name": false,
+    "no-var-requires": false,
+    "max-classes-per-file": false,
+    "no-shadowed-variable": false
+  }
+}

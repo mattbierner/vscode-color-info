@@ -1,49 +1,25 @@
-const padImpl = require('pad')
+const padImpl = require('pad');
 
-/**
- * 
- */
 export const clamp = (val: number, min: number, max: number): number =>
-    Math.min(max, Math.max(min, val))
+    Math.min(max, Math.max(min, val));
 
-/**
- * 
- */
 export const pad = (val: string, count: number): string =>
-    padImpl(count, '' + val, '\u00A0')
+    padImpl(count, '' + val, '\u00A0');
 
-/**
- * 
- */
 export const number = (val: string, padding: number) =>
-    '`\u200B' + pad(val, padding + 2) + '`'
+    '`\u200B' + pad(val, padding + 2) + '`';
 
-/**
- * 
- */
 export const unit = (unit: string, val: number, padding: number): string =>
-    number(val + unit, padding)
+    number(val + unit, padding);
 
-/**
- * 
- */
 export const percent = (val: number, padding: number): string =>
-    unit('%', +(val).toFixed(2), padding)
+    unit('%', +(val).toFixed(2), padding);
 
-/**
- * 
- */
 export const decimalPercent = (val: number, padding: number): string =>
-    percent(val * 100, padding)
+    percent(val * 100, padding);
 
-/**
- * 
- */
 export const deg = (val: number, padding: number): string =>
-    unit('\u00B0', +(val).toFixed(2), padding)
+    unit('\u00B0', +(val).toFixed(2), padding);
 
-/**
- * 
- */
-export const func = (name: string, ...keys: Array<string>): string =>
-    `**${name}(**${keys.join(', ')}**)**`
+export const func = (name: string, ...keys: string[]): string =>
+    `**${name}(**${keys.join(', ')}**)**`;
