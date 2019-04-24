@@ -13,9 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
         for (const existing of providerRegistrations) {
             existing.dispose();
         }
-        while (context.subscriptions.length) {
-            context.subscriptions.pop();
-        }
+
         providerRegistrations = [];
         const workspaceConfig = vscode.workspace.getConfiguration('colorInfo');
         const display = new ColorDisplay(workspaceConfig);
@@ -25,15 +23,17 @@ export function activate(context: vscode.ExtensionContext) {
             const hoverProvider = new ColorInfoHoverProvider(new ColorExtractor(lang.colorExtractors), display);
             const registration = vscode.languages.registerHoverProvider(lang.selector, hoverProvider);
             providerRegistrations.push(registration);
-            context.subscriptions.push(registration);
         }
     }
 
     let providerRegistrations: vscode.Disposable[] = [];
+    context.subscriptions.push(new vscode.Disposable(() => {
+        vscode.Disposable.from(...providerRegistrations).dispose();
+        providerRegistrations = [];
+    }));
 
     vscode.workspace.onDidChangeConfiguration(() => {
         reload();
     });
-
     reload();
 }
