@@ -29,16 +29,16 @@ class LanguageConfiguration {
                     break;
             }
         }
-        return new LanguageConfiguration(user.selector, types);
+        const selector: vscode.DocumentSelector = typeof user.selector === 'string'
+            ? [{ language: user.selector }]
+            : user.selector;
+        return new LanguageConfiguration(selector, types);
     }
 
-    public selector: string | {};
-    public colorExtractors: Set<ColorValueExtractorType>;
-
-    private constructor(selector: string | {}, colorExtractors: Set<ColorValueExtractorType>) {
-        this.selector = selector;
-        this.colorExtractors = colorExtractors;
-    }
+    private constructor(
+        public readonly selector: vscode.DocumentSelector,
+        public readonly colorExtractors: Set<ColorValueExtractorType>,
+    ) { }
 }
 
 /**
