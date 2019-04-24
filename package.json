@@ -5,6 +5,7 @@
   "version": "0.5.0",
   "publisher": "bierner",
   "license": "MIT",
+  "extensionKind": "ui",
   "keywords": [
     "color",
     "rgb",
