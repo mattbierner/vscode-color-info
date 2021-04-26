@@ -13,6 +13,7 @@
 * `css-color-name` - Name of the color (`red`, `blue`, ...).
 * `hsv` – HSV color values
 * `lab` – LAB color values
+* `lch` – LCHab color values
 * `cmyk` – CMYK color values. Enabled by default
 * `hex` – Hex value. Enabled by default
 * `alpha` – Alpha value. Enabled by default
@@ -73,7 +74,7 @@ Each element consists of:
     * `hsl` - Css hsl or hsla (`hsl(1, 2, 3)` or  `hsla(1, 2, 3, 0.5)`)
     * `css-colors-names` - Css color names (`red`, `blue`)
 
-VSCode does not currently support nested languages, so to enable Color Info in an `html` file, you must add: 
+VSCode does not currently support nested languages, so to enable Color Info in an `html` file, you must add:
 
 ```json
 {

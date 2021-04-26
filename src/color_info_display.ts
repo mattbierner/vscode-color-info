@@ -8,6 +8,7 @@ import HexDisplay from './displays/hex_display';
 import HslDisplay from './displays/hsl_display';
 import HsvDisplay from './displays/hsv_display';
 import LabDisplay from './displays/lab_display';
+import LchDisplay from './displays/lch_display';
 import NameDisplay from './displays/name_display';
 import { Preview, PreviewSquare, PreviewSquareXL, PreviewXL } from './displays/preview_display';
 import RgbDisplay from './displays/rgb_display';
@@ -19,17 +20,18 @@ export interface ColorValueDisplay {
 
 type DisplayRegistry = Map<string, ColorValueDisplay>;
 
-const allFields = [
+const allFields: DisplayRegistry = [
     Preview, PreviewXL, PreviewSquare, PreviewSquareXL,
     RgbDisplay,
     HslDisplay,
     HsvDisplay,
     CmykDisplay,
     LabDisplay,
+    LchDisplay,
     AlphaDisplay,
     HexDisplay,
     NameDisplay,
-].reduce((p: DisplayRegistry, display) => {
+].reduce((p, display) => {
     p.set(display.name, display);
     return p;
 }, new Map());
