@@ -1,7 +1,10 @@
 # Change Log
 
+## 0.6.0 - April 26, 2021
+* Adde lch color display. Thanks @mgcrea!
+
 ## 0.5.1 - April 24, 2019
-* Mark explicit extension kind for VS Code compatability.
+* Mark explicit extension kind for VS Code compatibility.
 
 ## 0.5.0 - June 13, 2017
 * Add support for hex colors with alpha: `#f0f7` and `#ff00ff77`
