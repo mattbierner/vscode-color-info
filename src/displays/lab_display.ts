@@ -1,5 +1,5 @@
-const convert = require('color-convert');
 
+import { hsl } from 'color-convert';
 import { ColorMatch } from '../color_extractor';
 import { ColorValueDisplay } from '../color_info_display';
 import { func, number } from './display_helper';
@@ -12,7 +12,7 @@ export default new class LabDisplay implements ColorValueDisplay {
 
     public display(match: ColorMatch) {
         const { h, s, l } = match.color.toHsl();
-        const lab = convert.hsl.lab(h, s * 100, l * 100);
-        return func('lab', number(lab[0], 5), number(lab[1], 5), number(lab[2], 5));
+        const lab = hsl.lab.raw([h, s * 100, l * 100]);
+        return func('lab', number(lab[0].toFixed(2), 5), number(lab[1].toFixed(2), 5), number(lab[2].toFixed(2), 5));
     }
 }();
