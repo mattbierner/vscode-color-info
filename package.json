@@ -43,11 +43,7 @@
       "title": "Color-Info configuration",
       "properties": {
         "colorInfo.fields": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "default": null,
+          "type": "array",
           "items": {
             "type": "string",
             "enum": [
@@ -65,13 +61,12 @@
               "preview",
               "rgb"
             ],
-            "description": "Color field id"
+            "description": "Color field id."
           },
           "description": "Ordered list of color fields to display."
         },
         "colorInfo.excludedFields": {
           "type": "array",
-          "default": null,
           "items": {
             "type": "string",
             "enum": [
@@ -91,7 +86,7 @@
             ],
             "description": "Color field id"
           },
-          "description": "Color fields not to display. Overrides `colorInfo.fields`."
+          "markdownDescription": "Fields not to display. Overrides `#colorInfo.fields#`."
         },
         "colorInfo.languages": {
           "type": "array",
@@ -121,7 +116,7 @@
                   "string",
                   "object"
                 ],
-                "description": "Document selector for language or file. See https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector"
+                "markdownDescription": "Document selector for language or file. See https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector"
               },
               "colors": {
                 "type": [
