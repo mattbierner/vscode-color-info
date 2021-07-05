@@ -1,7 +1,10 @@
 # Change Log
 
+## 0.6.1 - July 5, 2021
+* Update extension kind to support workspace if requested. Thanks @bamurtaugh!
+
 ## 0.6.0 - April 26, 2021
-* Adde lch color display. Thanks @mgcrea!
+* Add LCH color display. Thanks @mgcrea!
 
 ## 0.5.1 - April 24, 2019
 * Mark explicit extension kind for VS Code compatibility.
