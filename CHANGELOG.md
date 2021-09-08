@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.0 - September 8, 2021
+* Webpack extension to improve performance and reduce install size.
+* Add support for running in browsers.
+
 ## 0.6.1 - July 5, 2021
 * Update extension kind to support workspace if requested. Thanks @bamurtaugh!
 
