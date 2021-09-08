@@ -1,6 +1,8 @@
 import { ColorMatch } from '../color_extractor';
 import { ColorValueDisplay } from '../color_info_display';
-const Datauri = require('datauri');
+import base64 from 'base-64';
+import utf8 from 'utf8';
+
 /**
  * Displays a preview of a color.
  */
@@ -14,7 +16,6 @@ class PreviewDisplay implements ColorValueDisplay {
     public display(match: ColorMatch) {
         const hex = match.color.toHexString();
 
-        const datauri = new Datauri();
         const src = `<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +25,8 @@ class PreviewDisplay implements ColorValueDisplay {
         <polygon points="0,0 ${this.width},0 ${this.width},${this.height}" fill="${hex}" />
         <rect width="${this.width}" height="${this.height}" fill-opacity="0" stroke="gray" strokeWidth="1" />
 </svg>`;
-        datauri.format('.svg', src);
-        return `![](${datauri.content})`;
+        const dataUri = 'data:image/svg+xml;charset=UTF-8;base64,' + base64.encode(utf8.encode(src));
+        return `![](${dataUri})`;
     }
 }
 

@@ -14,6 +14,7 @@
         "noImplicitAny": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules",
