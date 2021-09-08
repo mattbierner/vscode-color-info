@@ -1,7 +1,7 @@
 import { ColorMatch } from '../color_extractor';
 import { ColorValueDisplay } from '../color_info_display';
-import base64 from 'base-64';
-import utf8 from 'utf8';
+import * as base64 from 'base-64';
+import * as utf8 from 'utf8';
 
 /**
  * Displays a preview of a color.

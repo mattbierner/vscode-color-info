@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import { ColorValueExtractorType } from './color_extractor';
 
 interface UserLanguageConfiguration {
-    selector: string | {};
+    selector: string | Record<string, unknown>;
     colors: string | string[];
 }
 

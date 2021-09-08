@@ -1,12 +1,12 @@
+import * as tinycolor from 'tinycolor2';
 import * as vscode from 'vscode';
-const tinycolor = require('tinycolor2');
 
 /**
  * A found color value in some text
  */
 export interface ColorMatch {
     value: string;
-    color: any;
+    color: tinycolor.Instance;
     span: vscode.Range;
 }
 
