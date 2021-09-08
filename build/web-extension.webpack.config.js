@@ -16,13 +16,6 @@ module.exports = /** @type WebpackConfig */ {
     resolve: {
         mainFields: ['browser', 'module', 'main'], // look for `browser` entry point in imported node modules
         extensions: ['.ts', '.js'], // support ts-files and js-files
-        alias: {
-            process: "process/browser"
-        },
-        fallback: {
-            "path": require.resolve('path-browserify'),
-            "fs": false
-        }
     },
     module: {
         rules: [{
@@ -33,11 +26,6 @@ module.exports = /** @type WebpackConfig */ {
             }]
         }]
     },
-    plugins: [
-        new webpack.ProvidePlugin({
-            process: 'process/browser', // provide a shim for the global `process` variable
-        }),
-    ],
     externals: {
         'vscode': 'commonjs vscode', // ignored because it doesn't exist
     },
