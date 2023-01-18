@@ -32,7 +32,7 @@
     "url": "https://github.com/mattbierner/vscode-color-info.git"
   },
   "activationEvents": [
-    "*",
+    "onStartupFinished",
     "onLanguage:css",
     "onLanguage:less",
     "onLanguage:sass"
