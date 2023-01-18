@@ -1,8 +1,11 @@
 # Change Log
 
+## 0.7.2 - January 18, 2023
+* Optimize image files to further reduce download and install size.
+
 ## 0.7.1 - January 18, 2023
-- Reduce install size.
-- Switch to `onStartupFinished` to defer extension activation.
+* Reduce install size.
+* Switch to `onStartupFinished` to defer extension activation.
 
 ## 0.7.0 - September 8, 2021
 * Webpack extension to improve performance and reduce install size.
