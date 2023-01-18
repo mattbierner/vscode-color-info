@@ -172,7 +172,6 @@
   "dependencies": {
     "base-64": "^1.0.0",
     "color-convert": "^2.0.1",
-    "datauri": "^2.0.0",
     "tinycolor2": "^1.4.1",
     "utf8": "^3.0.0"
   }
