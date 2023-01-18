@@ -1,12 +1,10 @@
 .vscode/**
 .vscode-test/**
-typings/**
-out/test/**
-test/**
+build/**
 src/**
+test/**
+node_modules
 **/*.map
 .gitignore
 tsconfig.json
-vsc-extension-quickstart.md
-example/**
 **/*.vsix
