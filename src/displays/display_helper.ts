@@ -1,10 +1,8 @@
-import * as padImpl from 'pad';
-
 export const clamp = (val: number, min: number, max: number): number =>
     Math.min(max, Math.max(min, val));
 
 export const pad = (val: string, count: number): string =>
-    padImpl(count, '' + val, '\u00A0');
+    ('' + val).padStart(count, '\u00A0');
 
 export const number = (val: string, padding: number) =>
     '`\u200B' + pad(val, padding + 2) + '`';
