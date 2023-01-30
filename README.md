@@ -42,25 +42,17 @@ Array of fields not to display. Overrides `colorInfo.fields`. If you only need t
 
 
 #### `colorInfo.languages`
-Defines which files and languages have color info enabled, and which color types are supported. The default language setting enables all css color values for `css`, `sass`, and `less` documents:
+Defines which files and languages have color info enabled, and which color types are supported.
 
-```json
-"colorInfo.languages": [
-    {
-        "selector": "css",
-        "colors": "css"
-    }, {
-        "selector": "sass",
-        "colors": "css"
-    }, {
-        "selector": "scss",
-        "colors": "css"
-    }, {
-        "selector": "less",
-        "colors": "css"
-    }
-]
-```
+The default language setting enables all color values for the following file types:
+
+* `css` - CSS stylesheets
+* `sass` - Sass stylesheets
+* `less` - LESS stylesheets
+* `js` - JavaScript
+* `ts` - TypeScript
+* `cs` - C#
+* `java` - Java
 
 Each element consists of:
 
@@ -70,7 +62,9 @@ Each element consists of:
     * `css` - All css color value types
     * `hex` - Css hex (`#ff00ff` or `#f0f`)
     * `hex+alpha` - Css hex plus alpha (`#ff00ff77` or `#f0f7`)
-    * `rgb` - Css rgb or rgba (`rgb(1, 2, 3)` or `rgba(1, 2, 3, 0.5)`) c
+    * `numhex` - Numeric hex (`0xFFAABB`)
+    * `numhex+alpha` - Numeric hex plus alpha (`0xFFAABBEE`)
+    * `rgb` - Css rgb or rgba (`rgb(1, 2, 3)` or `rgba(1, 2, 3, 0.5)`) 
     * `hsl` - Css hsl or hsla (`hsl(1, 2, 3)` or  `hsla(1, 2, 3, 0.5)`)
     * `css-colors-names` - Css color names (`red`, `blue`)
 
