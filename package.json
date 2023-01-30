@@ -111,6 +111,10 @@
               "selector": "less",
               "colors": "css"
             },
+            {
+              "selector": "html",
+              "colors": "css"
+            },
 		        {
 		        	"selector": "js",
 		        	"colors": [
