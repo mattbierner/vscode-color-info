@@ -1,6 +1,6 @@
 # VSCode Color Info
 
-[Visual Studio Code](https://code.visualstudio.com) extension that provides quick information css colors.
+[Visual Studio Code](https://code.visualstudio.com) extension that provides quick information of colors in any programming language.
 
 ![fields](media/starter-example.png)
 
