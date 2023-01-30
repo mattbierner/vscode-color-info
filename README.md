@@ -44,16 +44,6 @@ Array of fields not to display. Overrides `colorInfo.fields`. If you only need t
 #### `colorInfo.languages`
 Defines which files and languages have color info enabled, and which color types are supported.
 
-The default language setting enables all color values for the following file types:
-
-* `css` - CSS stylesheets
-* `sass` - Sass stylesheets
-* `less` - LESS stylesheets
-* `js` - JavaScript
-* `ts` - TypeScript
-* `cs` - C#
-* `java` - Java
-
 Each element consists of:
 
 * `"selector"` - [VSCode document selector](https://code.visualstudio.com/Docs/extensionAPI/vscode-api#DocumentSelector).
@@ -67,6 +57,16 @@ Each element consists of:
     * `rgb` - Css rgb or rgba (`rgb(1, 2, 3)` or `rgba(1, 2, 3, 0.5)`) 
     * `hsl` - Css hsl or hsla (`hsl(1, 2, 3)` or  `hsla(1, 2, 3, 0.5)`)
     * `css-colors-names` - Css color names (`red`, `blue`)
+
+The default language setting enables all color values for the following file types:
+
+* `css` - CSS stylesheets
+* `sass` - Sass stylesheets
+* `less` - LESS stylesheets
+* `js` - JavaScript
+* `ts` - TypeScript
+* `cs` - C#
+* `java` - Java
 
 VSCode does not currently support nested languages, so to enable Color Info in an `html` file, you must add:
 
