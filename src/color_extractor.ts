@@ -84,6 +84,26 @@ const hexaExtractor: ColorValueExtractor = {
 };
 
 /**
+ * Get all numeric hex colors in a line of text.
+ */
+const numHexExtractor: ColorValueExtractor = {
+    type: 'numhex',
+    getColors(line: string, position: vscode.Position) {
+        return getRegExForLine(/(?:^|\s|\W)(0x(?:[0-9a-fA-F]{3}){1,2})(\b|$)/g, line, position.line);
+    },
+};
+
+/**
+ * Get all numeric hex colors with alpha in a line of text.
+ */
+const numHexaExtractor: ColorValueExtractor = {
+    type: 'numhex+alpha',
+    getColors(line: string, position: vscode.Position) {
+        return getRegExForLine(/(?:^|\s|\W)(0x(?:[0-9a-fA-F]{4}){1,2})(\b|$)/g, line, position.line);
+    },
+};
+
+/**
  * Extracts named css colors
  */
 const cssNameExtractor: ColorValueExtractor = {
@@ -143,6 +163,8 @@ const valueExtractorRegistry = [
     hexExtractor,
     hexaExtractor,
     cssNameExtractor,
+    numHexExtractor,
+    numHexaExtractor
 ].reduce((registry, extractor) => {
     registry[extractor.type] = extractor;
     return registry;
