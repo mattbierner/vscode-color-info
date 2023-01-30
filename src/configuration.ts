@@ -19,8 +19,6 @@ class LanguageConfiguration {
                     types.add('hex');
                     types.add('hex+alpha');
                     types.add('css-color-names');
-                    types.add('numhex');
-                    types.add('numhex+alpha');
                     break;
                 case 'rgb':
                 case 'hsl':
