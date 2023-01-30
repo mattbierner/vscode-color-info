@@ -1,7 +1,7 @@
 {
   "name": "color-info",
   "displayName": "Color Info",
-  "description": "Provides quick information about css colors",
+  "description": "Provides quick information about colors in any programming language",
   "version": "0.7.2",
   "publisher": "bierner",
   "license": "MIT",
@@ -110,7 +110,35 @@
             {
               "selector": "less",
               "colors": "css"
-            }
+            },
+		        {
+		        	"selector": "js",
+		        	"colors": [
+		        		"numhex",
+		        		"numhex+alpha"
+		        	]
+		        },
+		        {
+		        	"selector": "ts",
+		        	"colors": [
+		        		"numhex",
+		        		"numhex+alpha"
+		        	]
+		        },
+		        {
+		        	"selector": "cs",
+		        	"colors": [
+		        		"numhex",
+		        		"numhex+alpha"
+		        	]
+		        },
+		        {
+		        	"selector": "java",
+		        	"colors": [
+		        		"numhex",
+		        		"numhex+alpha"
+		        	]
+		        }
           ],
           "items": {
             "type": "object",
